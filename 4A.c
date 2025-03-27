@@ -9,7 +9,7 @@ void get_input(int * n){
 };
 
 bool solve(int w){
-    return (w % 2 == 0);
+    return ((w != 2) && (w % 2 == 0));
 };
 
 int main(){
