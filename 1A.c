@@ -17,7 +17,7 @@ long long int solve (long long int n, long long int m, long long int a){
     if (m % a != 0){
         y++;
     }
-    return x * y;;
+    return x * y;
 };
 
 int main(){
