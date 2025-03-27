@@ -2,22 +2,28 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
-void get_input(int * n, int * m, int * a){
-    fscanf(stdin, "%i %i %i", n, m, a);
+void get_input(long long int * n, long long int * m, long long int * a){
+    fscanf(stdin, "%lli %lli %lli", n, m, a);
     return;
 };
 
-int solve (int n, int m, int a){
-    float x = (float)n/a;
-    float y = (float)m/a;
-    int res = (int)ceil(x) * (int)ceil(y);
-    return res;
+long long int solve (long long int n, long long int m, long long int a){
+    long long int x, y;
+    x = n / a;
+    y = m / a;
+    if (n % a != 0){
+        x++;
+    }
+    if (m % a != 0){
+        y++;
+    }
+    return x * y;;
 };
 
 int main(){
-    int n, m, a;
+    long long int n, m, a;
     get_input(&n, &m, &a);
-    int solution = solve(n, m, a);
-    fprintf(stdout, "%i\n", solution);
+    long long int solution = solve(n, m, a);
+    fprintf(stdout, "%lli\n", solution);
     return 0;
 }
